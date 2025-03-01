@@ -6,6 +6,7 @@ public class Exercises {
     public boolean isPrime(long n) {
         // todo
         //
+        //
         return false;
     }
 
