@@ -1,13 +1,24 @@
+
 public class Exercises {
 
     /*
         complete this function to check if the input number is prime or not
      */
-    public boolean isPrime(long n) {
-        // todo
-        //
-        //
-        return false;
+    public static boolean isPrime(long n) {
+        int jazr = (int) Math.sqrt(n);
+        if(n==1)
+        {
+            return false;
+        }
+        while (jazr >= 2)
+        {
+            if(n % jazr == 0)
+            {
+                return false;
+            }
+            jazr--;
+        }
+        return true;
     }
 
     /*
@@ -46,5 +57,6 @@ public class Exercises {
 
     public static void main(String[] args) {
         // you can test your code here, but then it should be checked with test cases
+        isPrime(10);
     }
 }
