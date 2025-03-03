@@ -28,7 +28,18 @@ public class Exercises {
         if the input is not a fibonacci number with description above, return -1
      */
     public long fibonacciIndex(long n) {
-        // todo
+        int a1 = 1, a2 = 1, counter = 3;
+        while(a2 <= n)
+        {
+            int temp = a2;
+            a2 = a1 + a2;
+            a1 = temp;
+            if(a2 == n)
+            {
+                return counter;
+            }
+            counter++;
+        }
         return -1;
     }
 
@@ -51,12 +62,40 @@ public class Exercises {
         the output has to be a two-dimensional array of characters, so don't just print the triangle!
      */
     public char[][] generateTriangle(int n) {
-        // todo
-        return null;
+        char[][] triangle = new char[n][];
+        for(int i=0; i<n; i++)
+        {
+            triangle[i]= new char[i+1];
+        }
+        for(int i=0; i<n; i++)
+        {
+            for(int j=0; j<triangle[i].length ; j++)
+            {
+                if(i==n-1)
+                {
+                    for(int k=0; k<n; k++)
+                    {
+                        triangle[i][k]='*';
+                    }
+                }
+                else
+                {
+                    if(j==0 || j==triangle[i].length - 1)
+                    {
+                        triangle[i][j]='*';
+
+                    }
+                    else
+                    {
+                        triangle[i][j] = ' ';
+                    }
+                }
+            }
+        }
+        return triangle;
     }
 
     public static void main(String[] args) {
         // you can test your code here, but then it should be checked with test cases
-        isPrime(10);
     }
 }
